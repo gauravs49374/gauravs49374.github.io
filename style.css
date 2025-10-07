@@ -1850,6 +1850,19 @@ select.form-control {
     .nav-menu {
         display: none;
     }
+
+    .nav-menu.active {
+      display: flex !important; /* force override */
+      flex-direction: column;
+      background: white;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      z-index: 9999;
+      border-top: 1px solid #ddd;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  }
     
     .nav-toggle {
         display: flex;
