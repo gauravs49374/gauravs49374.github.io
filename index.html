@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Himalayan Vista Guest House - Where Mountains Meet Comfort</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>The Himalayan Vista</h2>
+                <span class="tagline">Guest House</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link active" data-page="home">Home</a>
+                <a href="#rooms" class="nav-link" data-page="rooms">Rooms</a>
+                <a href="#book-now" class="nav-link" data-page="book-now">Book Now</a>
+                <a href="#bike-rentals" class="nav-link" data-page="bike-rentals">Bike Rentals</a>
+                <a href="#about" class="nav-link" data-page="about">About</a>
+                <a href="#contact" class="nav-link" data-page="contact">Contact</a>
+                <a href="#admin" class="nav-link admin-link" data-page="admin" style="display: none;">Admin</a>
+            </div>
+            <div class="nav-auth">
+                <button class="btn btn--outline btn--sm" id="login-btn">Login</button>
+                <button class="btn btn--primary btn--sm" id="register-btn">Register</button>
+                <div class="user-menu" id="user-menu" style="display: none;">
+                    <span id="username-display"></span>
+                    <button class="btn btn--outline btn--sm" id="logout-btn">Logout</button>
+                </div>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <main class="main-content">
+        
+        <!-- Home Page -->
+        <div class="page active" id="home">
+            <!-- Hero Section -->
+          <section class="hero">
+  <div class="hero-image">
+    <div class="slideshow">
+      <img src="photos/lake.png" alt="Himalayan Vista">
+      <img src="photos/room2.png" alt="Himalayan Vista">
+      <img src="photos/reception.png" alt="Himalayan Vista">
+    </div>
+  </div>
+
+  <div class="hero-content">
+    <div class="container">
+      <h1>Where Mountains Meet Comfort</h1>
+      <p class="hero-text">
+        Experience the serenity of the Himalayas at our charming guest house with breathtaking views, comfortable accommodations, warm hospitality, and exciting bike rental adventures.
+      </p>
+      <div class="hero-buttons">
+        <button class="btn btn--primary btn--lg" data-page="book-now">Book Now & Pay at arrival</button>
+        <button class="btn btn--primary btn--lg" data-page="bike-rentals">Rent a Bike</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+            <!-- Features Section -->
+            <section class="features">
+                <div class="container">
+                    <h2>Why Choose Himalayan Vista</h2>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon" style="background-color: var(--color-bg-1);">
+                                <i class="fa-solid fa-guitar"></i>
+                            </div>
+                            <h3>Live music</h3>
+                            <p> Performers alwasys welcomed </p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon" style="background-color: var(--color-bg-2);">
+                                <i class="fas fa-motorcycle"></i>
+                            </div>
+                            <h3>Bike Rentals</h3>
+                            <p>Explore the mountains with our premium bike rental service</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon" style="background-color: var(--color-bg-3);">
+                                <i class="fas fa-bed"></i>
+                            </div>
+                            <h3>Comfortable Rooms</h3>
+                            <p>Cozy accommodations with modern amenities and traditional charm</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon" style="background-color: var(--color-bg-4);">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <h3>Local Cuisine</h3>
+                            <p>Authentic Himalayan dishes and international favorites</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bike Rental Teaser -->
+            <section class="bike-teaser">
+                <div class="container">
+                    <div class="teaser-content">
+                        <div class="teaser-text">
+                            <h2>Explore the Himalayas on Two Wheels</h2>
+                            <p>From Royal Enfield adventures to comfortable scooters for local sightseeing - we have the perfect ride for your mountain exploration.</p>
+                            <button class="btn btn--primary" data-page="bike-rentals">View All Bikes</button>
+                        </div>
+                        <div class="teaser-bikes">
+                            <div class="teaser-bike">
+                                <img src="photos/1.png" alt="Royal Enfield Himalayan">
+                                <span>Royal Enfield Himalayan</span>
+                            </div>
+                            <div class="teaser-bike">
+                                <img src="photos/classic350.png" alt="Royal Enfield Classic">
+                                <span>Royal Enfield Classic 350</span>
+                            </div>
+                            <div class="teaser-bike">
+                                <img src="photos/activa.png" alt="Honda Activa">
+                                <span>Honda Activa 6G</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Rooms Page -->
+        <div class="page" id="rooms">
+            <div class="container">
+                <div class="page-header">
+                    <h1>Available rooms now!</h1>
+                    <p>Comfortable accommodations with stunning mountain views</p>
+                </div>
+                <div class="rooms-grid">
+                    <div class="room-card">
+                      <div class="room-image">
+  <img src="photos/room1.jpeg" alt="">
+</div>
+                        <div class="room-content">
+                            <h3>AC Room </h3>
+                            <p class="room-description">Spacious room with Himalayan views</p>
+                            <div class="room-amenities">
+                                <span><i class="fa-solid fa-shirt"></i> Washing machine</span>
+                                <span><i class="fas fa-tv"></i> TV</span>
+                                <span><i class="fas fa-snowflake"></i> AC</span>
+                                <span><i class="fa-solid fa-utensils"></i> Blinkit / Zomato </span>
+                                <span><i class="fas fa-shower"></i> Hot Water</span>
+                                <span><i class="fa-solid fa-temperature-arrow-up"></i>Heater @ 150/day</span>
+                            </div>
+                            <div class="room-price">₹950/night @ 5 % off</div>
+                            <button class="btn btn--primary btn--full-width book-room-btn" data-room="Deluxe Mountain View" data-price="3500">Book Now</button>
+                        </div>
+                    </div>
+                    <div class="room-card">
+                        <div class="room-image">
+                            <img src="photos/room2.png" alt="Standard Valley View">
+                            
+                        </div>
+                        <div class="room-content">
+                            <h3>Non AC premium Room</h3>
+                            <p class="room-description">Comfortable room with valley views, queen bed, and modern amenities</p>
+                            <div class="room-amenities">
+                                   <span><i class="fa-solid fa-shirt"></i> Washing machine</span>
+                                <span><i class="fas fa-tv"></i> TV</span>
+                                <span><i class="fa-solid fa-utensils"></i> Blinkit / Zomato </span>
+                                <span><i class="fas fa-shower"></i> Hot Water</span>
+                                <span><i class="fa-solid fa-temperature-arrow-up"></i>Heater @ 150/day</span>
+                            </div>
+                            <div class="room-price">₹900/night</div>
+                            <button class="btn btn--primary btn--full-width book-room-btn" data-room="Standard Valley View" data-price="2500">Book Now</button>
+                        </div>
+                    </div>
+                    <div class="room-card">
+                        <div class="room-image">
+                            <img src="photos/3bhk.jpeg" alt="Budget Twin Bed">
+                        </div>
+                        <div class="room-content">
+                            <h3>3 BHK for your travel buddies</h3>
+                            <p class="room-description">Cozy rooms with kitchen and hall, perfect for budget travelers and friends</p>
+                            <div class="room-amenities">
+                                 <span><i class="fas fa-snowflake"></i> AC in 1 room</span>
+                                  <span><i class="fa-solid fa-shirt"></i> Washing machine</span>
+                                <span><i class="fas fa-tv"></i> TV</span>
+                                <span><i class="fa-solid fa-utensils"></i> Blinkit / Zomato </span>
+                                <span><i class="fas fa-shower"></i> Hot Water</span>
+                                <span><i class="fa-solid fa-temperature-arrow-up"></i>Heater @ 150/day</span>
+                            </div>
+                            <div class="room-price">₹2200/night</div>
+                            <button class="btn btn--primary btn--full-width book-room-btn" data-room="Budget Twin Bed" data-price="1800">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book Now Page -->
+        <div class="page" id="book-now">
+            <div class="container">
+                <div class="page-header">
+                    <h1>Book Your Stay</h1>
+                    <p>Reserve your perfect mountain getaway</p>
+                </div>
+                <div class="booking-container">
+                    <form class="booking-form" id="room-booking-form">
+                        <div class="form-section">
+                            <h3>Room Selection</h3>
+                            <div class="form-group">
+                                <label class="form-label">Room Type</label>
+                                <select class="form-control" id="room-type" required>
+                                    <option value="">Select Room Type</option>
+                                    <option value="Deluxe Mountain View" data-price="950">AC Room </option>
+                                    <option value="Standard Valley View" data-price="900">Non AC</option>
+                                    <option value="Budget Twin Bed" data-price="2200">3 BHK for you travel buddies</option>
+                                </select>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">Check-in Date</label>
+                                    <input type="date" class="form-control" id="checkin-date" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Check-out Date</label>
+                                    <input type="date" class="form-control" id="checkout-date" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">Adults</label>
+                                    <select class="form-control" id="adults" required>
+                                        <option value="1">1 Adult</option>
+                                        <option value="2">2 Adults</option>
+                                        <option value="3">3 Adults</option>
+                                        <option value="4">4 Adults</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Children</label>
+                                    <select class="form-control" id="children">
+                                        <option value="0">No Children</option>
+                                        <option value="1">1 Child</option>
+                                        <option value="2">2 Children</option>
+                                        <option value="3">3 Children</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-section">
+                            <h3>Guest Information</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">First Name</label>
+                                    <input type="text" class="form-control" id="first-name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Last Name</label>
+                                    <input type="text" class="form-control" id="last-name" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="guest-email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Phone</label>
+                                    <input type="tel" class="form-control" id="guest-phone" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="booking-summary">
+                            <h3>Booking Summary</h3>
+                            <div class="summary-row">
+                                <span>Room:</span>
+                                <span id="summary-room">-</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Dates:</span>
+                                <span id="summary-dates">-</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Guests:</span>
+                                <span id="summary-guests">-</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Nights:</span>
+                                <span id="summary-nights">-</span>
+                            </div>
+                            <div class="summary-row total">
+                                <span>Total:</span>
+                                <span id="summary-total">₹0</span>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn--primary btn--lg btn--full-width">Complete Booking</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bike Rentals Page -->
+        <div class="page" id="bike-rentals">
+            <div class="container">
+                <div class="page-header">
+                    <h1>Bike Rentals Coming Soon </h1>
+                    <p>We are currently trying to source asses as soon as possible(please hang on for now )</p>
+                </div>
+
+                <!-- Bike Categories -->
+                <div class="bike-categories">
+                    <button class="category-btn active" data-category="all">All Bikes</button>
+                    <button class="category-btn" data-category="Adventure">Adventure</button>
+                    <button class="category-btn" data-category="Classic">Classic</button>
+                    <button class="category-btn" data-category="Sports">Sports</button>
+                    <button class="category-btn" data-category="Scooter">Scooter</button>
+                </div>
+
+                <!-- Bikes Grid -->
+                <div class="bikes-grid" id="bikes-grid"></div>
+
+                <!-- Popular Routes Section -->
+                <section class="popular-routes">
+                    <h2>Popular Routes</h2>
+                    <div class="routes-grid">
+                        <div class="route-card">
+                            <h3>Manali to Rohtang Pass</h3>
+                            <div class="route-info">
+                                <span><i class="fas fa-road"></i> 51 km</span>
+                                <span><i class="fas fa-clock"></i> 2-3 hours</span>
+                                <span class="difficulty moderate">Moderate</span>
+                            </div>
+                            <p>Scenic mountain route with snow-capped peaks and breathtaking views</p>
+                        </div>
+                        <div class="route-card">
+                            <h3>Manali to Kullu Valley</h3>
+                            <div class="route-info">
+                                <span><i class="fas fa-road"></i> 40 km</span>
+                                <span><i class="fas fa-clock"></i> 1.5 hours</span>
+                                <span class="difficulty easy">Easy</span>
+                            </div>
+                            <p>Beautiful valley ride through apple orchards and riverside paths</p>
+                        </div>
+                        <div class="route-card">
+                            <h3>Manali to Solang Valley</h3>
+                            <div class="route-info">
+                                <span><i class="fas fa-road"></i> 13 km</span>
+                                <span><i class="fas fa-clock"></i> 30 minutes</span>
+                                <span class="difficulty easy">Easy</span>
+                            </div>
+                            <p>Perfect for adventure sports and paragliding with mountain views</p>
+                        </div>
+                        <div class="route-card">
+                            <h3>Manali to Kasol</h3>
+                            <div class="route-info">
+                                <span><i class="fas fa-road"></i> 75 km</span>
+                                <span><i class="fas fa-clock"></i> 3 hours</span>
+                                <span class="difficulty moderate">Moderate</span>
+                            </div>
+                            <p>Scenic route through Parvati Valley, known for its natural beauty</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Bike Rental Terms -->
+                <section class="rental-terms">
+                    <h2>Rental Requirements & Terms</h2>
+                    <div class="terms-grid">
+                        <div class="terms-section">
+                            <h3>Requirements</h3>
+                            <ul>
+                                <li>Minimum age: 18 years</li>
+                                <li>Valid driving license mandatory</li>
+                                <li>Security deposit: ₹2,000 - ₹5,000 (refundable)</li>
+                            </ul>
+                        </div>
+                        <div class="terms-section">
+                            <h3>Included</h3>
+                            <ul>
+                                <li>Helmet (2 helmets for bikes)</li>
+                                <li>Basic toolkit</li>
+                                <li>Bike lock</li>
+                                <li>Road-side assistance contact</li>
+                                <li>Route guidance maps</li>
+                            </ul>
+                        </div>
+                        <div class="terms-section">
+                            <h3>Not Included</h3>
+                            <ul>
+                                <li>Fuel charges</li>
+                                <li>Toll charges</li>
+                                <li>Parking fees</li>
+                                <li>Insurance coverage</li>
+                                <li>Riding gear (except helmet)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- About Page -->
+        <div class="page" id="about">
+            <div class="container">
+                <div class="about-hero">
+                    <div class="about-content">
+                        <h1>About Himalayan Vista Guest House</h1>
+                        <p class="lead">Nestled in the heart of the Himalayas! Sundernagar, our guest house offers an authentic mountain experience combined with modern comfort and warm hospitality.</p>
+                        <p>We aim to start a modern live music cafe where anyone can come and perform and enjoy the eve.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="photos/lake.png" alt="Himalayan Vista Guest House">
+                    </div>
+                </div>
+                
+                <div class="about-sections">
+                    <div class="about-section">
+                        <h2>Our Story</h2>
+                        <p>Founded in 2025, Himalayan Vista Guest House has been welcoming travelers from around the world to experience the beauty and tranquility of the Himalayas. We have started it as a family-run guest house</p>
+                        <p>Our passion for the mountains and commitment to sustainable tourism drives everything we do. We believe in providing authentic experiences while preserving the natural beauty that surrounds us.</p>
+                    </div>
+                    
+                    <div class="about-section">
+                        <h2>Our Services</h2>
+                        <div class="services-grid">
+                            <div class="service-item">
+                                <i class="fas fa-bed"></i>
+                                <h4>Comfortable Accommodation</h4>
+                                <p>Clean, cozy rooms with stunning mountain views</p>
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-motorcycle"></i>
+                                <h4>Bike Rentals</h4>
+                                <p>Premium bikes for mountain exploration</p>
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-utensils"></i>
+                                <h4>Local Cuisine</h4>
+                                <p>Authentic Himalayan and international dishes</p>
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-hiking"></i>
+                                <h4>Tent rentals</h4>
+                                <p>Guided treks and adventure sports around bir billing and dharamshala</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Page -->
+        <div class="page" id="contact">
+            <div class="container">
+                <div class="page-header">
+                    <h1>Contact Us</h1>
+                    <p>Get in touch with us for bookings and inquiries</p>
+                </div>
+                
+                <div class="contact-content">
+                    <div class="contact-form-section">
+                        <form class="contact-form" id="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">Name</label>
+                                    <input type="text" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Phone</label>
+                                <input type="tel" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Subject</label>
+                                <select class="form-control">
+                                    <option>General Inquiry</option>
+                                    <option>Room Booking</option>
+                                    <option>Bike Rental</option>
+                                    <option>Complaint</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Message</label>
+                                <textarea class="form-control" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn--primary btn--lg">Send Message</button>
+                        </form>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <div class="contact-card">
+                            <h3>Get in Touch</h3>
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <strong>Address</strong>
+                                    <p>Sundernagar , Front of 4 lane, near shiva bhojanalaya Himachal Pradesh, India - 175018</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <strong>Phone</strong>
+                                    <p>+91-8894498398</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <strong>Email</strong>
+                                    <p>gauravs49374@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <strong>Reception Hours</strong>
+                                    <p>24/7 Available</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Admin Page -->
+        <div class="page" id="admin">
+            <div class="container">
+                <div class="page-header">
+                    <h1>Admin Dashboard</h1>
+                    <p>Manage bookings and inventory</p>
+                </div>
+                
+                <div class="admin-tabs">
+                    <button class="tab-btn active" data-tab="room-bookings">Room Bookings</button>
+                    <button class="tab-btn" data-tab="bike-bookings">Bike Bookings</button>
+                    <button class="tab-btn" data-tab="bike-inventory">Bike Inventory</button>
+                </div>
+                
+                <div class="admin-content">
+                    <div class="tab-content active" id="room-bookings">
+                        <div class="bookings-table" id="room-bookings-table"></div>
+                    </div>
+                    <div class="tab-content" id="bike-bookings">
+                        <div class="bookings-table" id="bike-bookings-table"></div>
+                    </div>
+                    <div class="tab-content" id="bike-inventory">
+                        <div class="inventory-grid" id="bike-inventory-grid"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Contact Footer Section -->
+    <footer class="contact-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Quick Contact</h3>
+                    <form class="quick-contact-form">
+                        <input type="text" placeholder="Your Name" class="form-control" required>
+                        <input type="email" placeholder="Your Email" class="form-control" required>
+                        <input type="tel" placeholder="Your Phone" class="form-control">
+                        <textarea placeholder="Your Message" class="form-control" rows="3" required></textarea>
+                        <button type="submit" class="btn btn--primary">Send</button>
+                    </form>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <div class="contact-info-list">
+                        <p><i class="fas fa-map-marker-alt"></i> sundernagar, front of 4 lane , near shiva bhojanalaya Himachal Pradesh - 175131</p>
+                        <p><i class="fas fa-phone"></i> +91-8894498398</p>
+                        <p><i class="fas fa-envelope"></i> gauravs49374@gmail.com</p>
+                        <p><i class="fas fa-globe"></i>https://gauravs49374.github.io/ </p>
+                        <p><i class="fas fa-exclamation-triangle"></i> Emergency: +91-9418457296</p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Operating Hours</h3>
+                    <div class="operating-hours">
+                        <p><strong>Check-in:</strong> 2:00 PM - 10:00 PM</p>
+                        <p><strong>Check-out:</strong> 8:00 AM - 12:00 PM</p>
+                        <p><strong>Bike Rentals:</strong> 8:00 AM - 8:00 PM</p>
+                        <p><strong>Reception:</strong> 24/7</p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact over insta or whatsapp for instant booking and help</h3>
+                    <div class="social-links">
+                        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://instagram.com/gauravs49374" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com/himalayan_vista" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://youtube.com/himalayan-vista" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://wa.me/918894498398" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                    <div class="location-map">
+                        <div class="map-placeholder">
+                            <i class="fas fa-map"></i>
+                            <p>Interactive Map Coming Soon</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Himalayan Vista Guest House. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <!-- Login Modal -->
+    <div class="modal hidden" id="login-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Login</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <form class="modal-form" id="login-form">
+                <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn--primary btn--full-width">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div class="modal hidden" id="register-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Register</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <form class="modal-form" id="register-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">First Name</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Last Name</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Phone</label>
+                    <input type="tel" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn--primary btn--full-width">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bike Booking Modal -->
+    <div class="modal hidden" id="bike-booking-modal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3>Book Bike Rental</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <form class="modal-form" id="bike-booking-form">
+                <div class="bike-booking-content">
+                    <div class="selected-bike-info">
+                        <img id="selected-bike-image" src="" alt="">
+                        <div class="bike-details">
+                            <h4 id="selected-bike-name"></h4>
+                            <p id="selected-bike-description"></p>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h4>Rental Details</h4>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Pickup Date</label>
+                                <input type="date" class="form-control" id="bike-pickup-date" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Return Date</label>
+                                <input type="date" class="form-control" id="bike-return-date" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Pickup Time</label>
+                                <select class="form-control" id="bike-pickup-time" required>
+                                    <option value="08:00">8:00 AM</option>
+                                    <option value="09:00">9:00 AM</option>
+                                    <option value="10:00">10:00 AM</option>
+                                    <option value="11:00">11:00 AM</option>
+                                    <option value="12:00">12:00 PM</option>
+                                    <option value="13:00">1:00 PM</option>
+                                    <option value="14:00">2:00 PM</option>
+                                    <option value="15:00">3:00 PM</option>
+                                    <option value="16:00">4:00 PM</option>
+                                    <option value="17:00">5:00 PM</option>
+                                    <option value="18:00">6:00 PM</option>
+                                    <option value="19:00">7:00 PM</option>
+                                    <option value="20:00">8:00 PM</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Return Time</label>
+                                <select class="form-control" id="bike-return-time" required>
+                                    <option value="08:00">8:00 AM</option>
+                                    <option value="09:00">9:00 AM</option>
+                                    <option value="10:00">10:00 AM</option>
+                                    <option value="11:00">11:00 AM</option>
+                                    <option value="12:00">12:00 PM</option>
+                                    <option value="13:00">1:00 PM</option>
+                                    <option value="14:00">2:00 PM</option>
+                                    <option value="15:00">3:00 PM</option>
+                                    <option value="16:00">4:00 PM</option>
+                                    <option value="17:00">5:00 PM</option>
+                                    <option value="18:00">6:00 PM</option>
+                                    <option value="19:00">7:00 PM</option>
+                                    <option value="20:00">8:00 PM</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h4>Renter Information</h4>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="renter-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">License Number</label>
+                                <input type="text" class="form-control" id="license-number" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-control" id="renter-email" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Phone</label>
+                                <input type="tel" class="form-control" id="renter-phone" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bike-booking-summary">
+                        <h4>Booking Summary</h4>
+                        <div class="summary-row">
+                            <span>Rental Duration:</span>
+                            <span id="rental-duration">-</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Daily Rate:</span>
+                            <span id="daily-rate">-</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Security Deposit:</span>
+                            <span id="security-deposit">₹3,000</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total Amount:</span>
+                            <span id="bike-total-amount">₹0</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn--primary btn--lg btn--full-width">Complete Bike Booking</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
