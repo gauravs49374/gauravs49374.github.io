@@ -46,25 +46,40 @@
         <!-- Home Page -->
         <div class="page active" id="home">
             <!-- Hero Section -->
-          <section class="hero">
-  <div class="hero-image">
- 
-      <img src="photos/lake.png" alt="Himalayan Vista">
-   
-  
-  </div>
+         
 
-  <div class="hero-content">
-    <div class="container">
-      <h1>Where Mountains Meet Comfort</h1>
-    
-      <div class="hero-buttons">
-        <button class="btn btn--primary btn--lg" data-page="rooms">Click to view rooms & Pay at arrival</button>
-        <button class="btn btn--primary btn--lg" data-page="bike-rentals">Rent a Bike</button>
-      </div>
-    </div>
-  </div>
-</section>
+
+   <!-- Split Hero: Rooms + Bikes -->
+    <section class="hero hero-split" id="home-hero">
+      <!-- Left: Rooms / Pay at arrival -->
+      <a href="#rooms" class="hero-panel hero-panel--rooms" aria-label="Click to view rooms and pay at arrival">
+        <div class="hero-overlay"></div>
+        <div class="hero-content hero-content--split">
+          <span class="hero-kicker">Stay at Himalayan Vista</span>
+          <h1>Click to view rooms</h1>
+          <p>
+            Cozy mountain-view rooms on the Chandigarh–Manali highway with homely food
+            and the flexibility to pay at arrival.
+          </p>
+          <span class="hero-btn" data-page="rooms">Explore rooms</span>
+        </div>
+      </a>
+
+      <!-- Right: Bike rentals -->
+      <a href="#bike-rentals" class="hero-panel hero-panel--bikes" aria-label="Rent a bike for your Himalayan ride">
+        <div class="hero-overlay"></div>
+        <div class="hero-content hero-content--split">
+          <span class="hero-kicker">Ride the Himalayas</span>
+          <h2>Rent a bike</h2>
+          <p>
+            Choose your ride and explore Sundernagar, Manali, Kullu and nearby valleys on
+            well‑maintained motorcycles and scooters.
+          </p>
+          <span class="hero-btn hero-btn--alt" data-page="bike-rentals">View bikes</span>
+        </div>
+      </a>
+    </section>
+
 
             <!-- Features Section -->
             <section class="features">
@@ -115,7 +130,8 @@
                         <div class="teaser-bikes">
                             <div class="teaser-bike">
                                 <img src="photos/1.png" alt="Royal Enfield Himalayan">
-                                <span>Royal Enfield Himalayan</span>
+                                <span>Royal Enfield Hunter 350
+                                </span>
                             </div>
                             <div class="teaser-bike">
                                 <img src="photos/classic350.png" alt="Royal Enfield Classic">
@@ -166,7 +182,7 @@
                             
                         </div>
                         <div class="room-content">
-                            <h3>Non AC premium Room</h3>
+                            <h3>AC Room 2</h3>
                             <p class="room-description">Comfortable room with valley views, queen bed, and modern amenities</p>
                             <div class="room-amenities">
                                    <span><i class="fa-solid fa-shirt"></i> Washing machine</span>
@@ -184,7 +200,7 @@
                             <img src="photos/3bhk.jpeg" alt="Budget Twin Bed">
                         </div>
                         <div class="room-content">
-                            <h3>3 BHK for your travel buddies</h3>
+                            <h3>2 BHK for your travel buddies</h3>
                             <p class="room-description">Cozy rooms with kitchen and hall, perfect for budget travelers and friends</p>
                             <div class="room-amenities">
                                  <span><i class="fas fa-snowflake"></i> AC in 1 room</span>
