@@ -9,17 +9,17 @@ const bikeData = [
         "specifications": {
             "engine": "411cc, Single Cylinder",
             "fuel_capacity": "15L",
-            "mileage": "30 km/l",
+            "mileage": "35 km/l",
             "max_power": "24.3 bhp",
             "weight": "199 kg"
         },
         "pricing": {
             "hourly": 150,
-            "daily": 1800,
-            "weekly": 11500,
-            "monthly": 45000
+            "daily": 1200,
+            "weekly": 7000,
+            "monthly": 25000
         },
-        "available": false,
+        "available": true,
         "popular": true
     },
     {
@@ -36,10 +36,10 @@ const bikeData = [
             "weight": "195 kg"
         },
         "pricing": {
-            "hourly": 120,
-            "daily": 1400,
-            "weekly": 9000,
-            "monthly": 35000
+            "hourly": 150,
+            "daily": 1200,
+            "weekly": 7000,
+            "monthly": 30000
         },
         "available": false,
         "popular": true
@@ -57,11 +57,10 @@ const bikeData = [
             "max_power": "30 bhp",
             "weight": "169 kg"
         },
-        "pricing": {
-            "hourly": 140,
-            "daily": 1600,
-            "weekly": 10200,
-            "monthly": 40000
+        "pricing": { "hourly": 150,
+            "daily": 1200,
+            "weekly": 7000,
+            "monthly": 30000
         },
         "available": false,
         "popular": false
@@ -80,10 +79,10 @@ const bikeData = [
             "weight": "109 kg"
         },
         "pricing": {
-            "hourly": 80,
-            "daily": 800,
-            "weekly": 5000,
-            "monthly": 18000
+         "hourly": 150,
+            "daily": 1200,
+            "weekly": 7000,
+            "monthly": 30000
         },
         "available": false,
         "popular": true
@@ -101,12 +100,10 @@ const bikeData = [
             "max_power": "17.8 bhp",
             "weight": "154 kg"
         },
-        "pricing": {
-            "hourly": 130,
-            "daily": 1500,
-            "weekly": 9500,
-            "monthly": 37000
-        },
+        "pricing": { "hourly": 150,
+            "daily": 1200,
+            "weekly": 7000,
+            "monthly": 30000        },
         "available": false,
         "popular": false
     },
@@ -124,9 +121,9 @@ const bikeData = [
             "weight": "154 kg"
         },
         "pricing": {
-            "hourly": 110,
+             "hourly": 150,
             "daily": 1200,
-            "weekly": 7600,
+            "weekly": 7000,
             "monthly": 30000
         },
         "available": false,
