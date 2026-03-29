@@ -2,16 +2,16 @@
 const bikeData = [
     {
         "id": 1,
-        "name": "Royal Enfield Himalayan 411cc",
-        "category": "Adventure",
+        "name": "Royal Enfield Hunter 350 cc",
+        "category": "Hunter",
         "description": "Perfect for mountain adventures with superior performance on highways and off-road terrain",
         "image": "photos/1.png",
         "specifications": {
-            "engine": "411cc, Single Cylinder",
-            "fuel_capacity": "15L",
+            "engine": "350cc, Single Cylinder",
+            "fuel_capacity": "--L",
             "mileage": "35 km/l",
-            "max_power": "24.3 bhp",
-            "weight": "199 kg"
+            "max_power": "20.2 bhp",
+            "weight": "181 kg"
         },
         "pricing": {
             "hourly": 150,
