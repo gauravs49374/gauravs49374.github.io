@@ -1979,3 +1979,98 @@ select.form-control {
 }
 
 
+/* for the split of two sections */
+/* Hero Split */
+.hero {
+  min-height: 70vh;
+}
+
+.hero-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.hero-panel {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 48px;
+  min-height: 70vh;
+  text-decoration: none;
+  color: #ffffff;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  transition: transform 220ms ease-out, filter 220ms ease-out;
+}
+
+.hero-panel:hover {
+  transform: scale(1.01);
+  filter: saturate(1.08);
+}
+
+.hero-panel--rooms {
+  background-image:
+    linear-gradient(to top, rgba(15, 23, 42, 0.78), rgba(15, 23, 42, 0.2)),
+    url("photos/room1.jpeg");
+}
+
+.hero-panel--bikes {
+  background-image:
+    linear-gradient(to top, rgba(15, 23, 42, 0.82), rgba(15, 23, 42, 0.25)),
+    url("photos/1.png");
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-content--split {
+  position: relative;
+  z-index: 1;
+  max-width: 430px;
+}
+
+.hero-kicker {
+  display: inline-block;
+  margin-bottom: var(--space-8);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.hero-content--split h1,
+.hero-content--split h2 {
+  margin: 0 0 var(--space-8);
+  font-size: 32px;
+}
+
+.hero-content--split p {
+  margin: 0 0 var(--space-16);
+  font-size: 14px;
+  color: rgba(249, 250, 251, 0.92);
+}
+
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 22px;
+  border-radius: var(--radius-pill);
+  background: #ffffff;
+  color: #111827;
+  font-weight: 600;
+  box-shadow: var(--shadow-md);
+}
+
+.hero-btn--alt {
+  background: #fed7aa;
+  color: #7c2d12;
+}
+
+/* Sections / Cards */
