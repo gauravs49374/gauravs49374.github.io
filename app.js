@@ -142,6 +142,11 @@ document.addEventListener('DOMContentLoaded', function() {
     loadBikes();
     setupEventListeners();
     checkAuthState();
+    
+    // Auto-open Leh Ladakh trip advertisement modal on page load
+    setTimeout(() => {
+        openModal('advt-modal');
+    }, 600);
 });
 
 function initializeApp() {
@@ -170,6 +175,12 @@ function setupEventListeners() {
                 return;
             }
             navigateToPage(page);
+            const navMenu = document.getElementById('nav-menu');
+            const navToggle = document.getElementById('nav-toggle');
+            if (navMenu && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                if (navToggle) navToggle.classList.remove('active');
+            }
         });
     });
 
@@ -257,8 +268,19 @@ function setupEventListeners() {
     if (navToggle) {
         navToggle.addEventListener('click', () => {
             navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
         });
     }
+
+    // Escape key to close active modals
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            const activeModal = document.querySelector('.modal:not(.hidden)');
+            if (activeModal) {
+                closeModal(activeModal.id);
+            }
+        }
+    });
 }
 
 function setupModalListeners() {
