@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Camping Gear Rentals – Himalayan Vista</title>
+  <meta name="description" content="Rent camping tents, sleeping bags, travel burners and butane cans for your Himalayan adventure. Himalayan Vista Guest House, Sundernagar.">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    /* ── Page-level camping styles ─────────────────────── */
+    :root {
+      --camp-green:  #16a34a;
+      --camp-glow:   rgba(34, 197, 94, 0.35);
+      --camp-dark:   #052e16;
+    }
+
+    /* Hero banner */
+    .camp-hero {
+      position: relative;
+      min-height: 52vh;
+      display: flex;
+      align-items: flex-end;
+      background:
+        linear-gradient(to top,
+          rgba(5, 46, 22, 0.92) 0%,
+          rgba(5, 46, 22, 0.40) 60%,
+          rgba(5, 46, 22, 0.15) 100%),
+        url("https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=1400&auto=format&fit=crop")
+        center/cover no-repeat;
+      padding: 60px 40px;
+      overflow: hidden;
+    }
+
+    .camp-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        120deg,
+        transparent 30%,
+        rgba(255,255,255,0.04) 50%,
+        transparent 70%
+      );
+      animation: shimmer-slide 4s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .camp-hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+    }
+
+    .camp-hero-eyebrow {
+      display: inline-block;
+      background: linear-gradient(135deg, #16a34a, #22c55e);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+    }
+
+    .camp-hero h1 {
+      font-size: clamp(32px, 5vw, 58px);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.12;
+      margin: 0 0 14px;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+    }
+
+    .camp-hero p {
+      font-size: 18px;
+      color: rgba(255,255,255,0.82);
+      max-width: 480px;
+      line-height: 1.65;
+    }
+
+    /* Main content */
+    .camp-main {
+      background: var(--color-bg-primary, #0f172a);
+      padding: 72px 0;
+    }
+
+    .camp-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Section heading */
+    .camp-section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--camp-green);
+      margin-bottom: 8px;
+    }
+
+    .camp-section-title {
+      font-size: 30px;
+      font-weight: 800;
+      color: var(--color-text-primary, #f1f5f9);
+      margin: 0 0 8px;
+    }
+
+    .camp-section-sub {
+      color: var(--color-text-secondary, #94a3b8);
+      margin: 0 0 40px;
+    }
+
+    /* Divider */
+    .camp-divider {
+      border: none;
+      border-top: 1px solid var(--color-border, rgba(255,255,255,0.08));
+      margin: 64px 0;
+    }
+
+    /* Gear Cards Grid */
+    .gear-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 28px;
+    }
+
+    .gear-card {
+      background: var(--color-surface, #1e293b);
+      border: 1px solid var(--color-card-border, rgba(255,255,255,0.06));
+      border-radius: 20px;
+      overflow: hidden;
+      transition: transform 0.35s cubic-bezier(.34,1.56,.64,1),
+                  box-shadow 0.35s ease,
+                  border-color 0.3s ease;
+    }
+
+    .gear-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 45px rgba(0,0,0,0.4), 0 0 0 1px rgba(34,197,94,0.2);
+      border-color: rgba(34, 197, 94, 0.3);
+    }
+
+    .gear-card-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .gear-card:hover .gear-card-img {
+      transform: scale(1.05);
+    }
+
+    .gear-card-img-wrap {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .gear-card-available {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(5, 46, 22, 0.88);
+      color: #4ade80;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(74, 222, 128, 0.35);
+      backdrop-filter: blur(4px);
+    }
+
+    .gear-card-body {
+      padding: 22px 22px 26px;
+    }
+
+    .gear-card-name {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--color-text-primary, #f1f5f9);
+      margin: 0 0 6px;
+    }
+
+    .gear-card-desc {
+      font-size: 14px;
+      color: var(--color-text-secondary, #94a3b8);
+      line-height: 1.55;
+      margin: 0 0 18px;
+    }
+
+    /* Pricing table */
+    .gear-price-rows {
+      border-top: 1px solid var(--color-border, rgba(255,255,255,0.06));
+      padding-top: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .gear-price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    .gear-price-label {
+      color: var(--color-text-secondary, #94a3b8);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .gear-price-label i {
+      font-size: 12px;
+      color: var(--camp-green);
+    }
+
+    .gear-price-value {
+      font-weight: 700;
+      color: var(--color-text-primary, #f1f5f9);
+    }
+
+    .gear-price-value.price-green {
+      color: #4ade80;
+      font-size: 18px;
+    }
+
+    .gear-price-value.price-security {
+      color: #fb923c;
+    }
+
+    /* Consumables section */
+    .consumable-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .consumable-card {
+      background: var(--color-surface, #1e293b);
+      border: 1px solid var(--color-card-border, rgba(255,255,255,0.06));
+      border-radius: 16px;
+      padding: 28px 22px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      cursor: pointer;
+    }
+
+    .consumable-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 36px rgba(0,0,0,0.35);
+      border-color: rgba(34, 197, 94, 0.3);
+    }
+
+    .consumable-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(22, 163, 74, 0.15), rgba(34, 197, 94, 0.08));
+      border: 1px solid rgba(34, 197, 94, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      transition: transform 0.3s ease;
+    }
+
+    .consumable-card:hover .consumable-icon {
+      transform: rotate(8deg) scale(1.1);
+    }
+
+    .consumable-icon i {
+      font-size: 26px;
+      color: #4ade80;
+    }
+
+    .consumable-name {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--color-text-primary, #f1f5f9);
+      margin-bottom: 6px;
+    }
+
+    .consumable-desc {
+      font-size: 13px;
+      color: var(--color-text-secondary, #94a3b8);
+      margin-bottom: 14px;
+      line-height: 1.5;
+    }
+
+    .consumable-price {
+      font-size: 22px;
+      font-weight: 900;
+      color: #4ade80;
+    }
+
+    .consumable-unit {
+      font-size: 12px;
+      color: var(--color-text-secondary, #94a3b8);
+      margin-top: 2px;
+    }
+
+    /* Note box */
+    .camp-note {
+      background: linear-gradient(135deg,
+        rgba(22, 163, 74, 0.08),
+        rgba(34, 197, 94, 0.04));
+      border: 1px solid rgba(34, 197, 94, 0.2);
+      border-radius: 14px;
+      padding: 24px 28px;
+      margin-top: 48px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .camp-note-icon {
+      font-size: 22px;
+      color: #4ade80;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .camp-note-text h4 {
+      color: #4ade80;
+      margin: 0 0 6px;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .camp-note-text p, .camp-note-text ul {
+      color: var(--color-text-secondary, #94a3b8);
+      font-size: 14px;
+      line-height: 1.65;
+      margin: 0;
+      padding-left: 16px;
+    }
+
+    /* Back link */
+    .camp-back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #4ade80;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 28px;
+      transition: gap 0.2s ease;
+    }
+
+    .camp-back-link:hover { gap: 12px; }
+
+    @media (max-width: 640px) {
+      .gear-grid, .consumable-grid { grid-template-columns: 1fr; }
+      .camp-hero { padding: 40px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Navigation (same as main site) ─────────────────── -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <h2>The Himalayan Vista</h2>
+        <span class="tagline">Guest House</span>
+      </div>
+      <div class="nav-menu" id="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="index.html#rooms" class="nav-link">Rooms</a>
+        <a href="index.html#book-now" class="nav-link">Book Now</a>
+        <a href="index.html#bike-rentals" class="nav-link">Bike Rentals</a>
+        <a href="camping.html" class="nav-link active">Camping Gear</a>
+        <a href="index.html#about" class="nav-link">About</a>
+        <a href="index.html#contact" class="nav-link">Contact</a>
+      </div>
+      <div class="nav-auth">
+        <a href="https://wa.me/918894498398" target="_blank" class="btn btn--primary btn--sm">
+          <i class="fab fa-whatsapp"></i> Book via WhatsApp
+        </a>
+      </div>
+      <div class="nav-toggle" id="nav-toggle">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── Hero ────────────────────────────────────────────── -->
+  <section class="camp-hero">
+    <div class="camp-hero-inner">
+      <span class="camp-hero-eyebrow">⛺ Camping Gear Rentals</span>
+      <h1>Camp Under the<br>Himalayan Stars</h1>
+      <p>Rent premium tents, warm sleeping bags, travel burners, and butane cans for your Himalayan adventure — all from our guesthouse in Sundernagar.</p>
+    </div>
+  </section>
+
+  <!-- ── Main Content ─────────────────────────────────────── -->
+  <main class="camp-main">
+    <div class="camp-container">
+
+      <a href="index.html" class="camp-back-link">
+        <i class="fas fa-arrow-left"></i> Back to Himalayan Vista
+      </a>
+
+      <!-- TENTS & SLEEPING BAGS -->
+      <p class="camp-section-label">Overnight Rentals</p>
+      <h2 class="camp-section-title">Tents &amp; Sleeping Bags</h2>
+      <p class="camp-section-sub">Refundable security deposit required at pickup. Returned upon gear check-in.</p>
+
+      <div class="gear-grid">
+
+        <!-- Tent -->
+        <div class="gear-card">
+          <div class="gear-card-img-wrap">
+            <img
+              class="gear-card-img"
+              src="https://images.unsplash.com/photo-1487730116645-74489c95b41b?w=700&auto=format&fit=crop"
+              alt="2-Person Camping Tent">
+            <span class="gear-card-available">✓ 2 Units Available</span>
+          </div>
+          <div class="gear-card-body">
+            <h3 class="gear-card-name">2-Person Camping Tent</h3>
+            <p class="gear-card-desc">Durable dome tent with waterproof fly, sturdy poles, and a ventilated inner — perfect for Himalayan conditions up to 3,000 m altitude.</p>
+            <div class="gear-price-rows">
+              <div class="gear-price-row">
+                <span class="gear-price-label"><i class="fas fa-moon"></i> Rent per day</span>
+                <span class="gear-price-value price-green">₹500</span>
+              </div>
+              <div class="gear-price-row">
+                <span class="gear-price-label"><i class="fas fa-shield-alt"></i> Refundable security</span>
+                <span class="gear-price-value price-security">₹3,500</span>
+              </div>
+              <div class="gear-price-row">
+                <span class="gear-price-label"><i class="fas fa-boxes"></i> Inventory</span>
+                <span class="gear-price-value">2 tents</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sleeping Bag -->
+        <div class="gear-card">
+          <div class="gear-card-img-wrap">
+            <img
+              class="gear-card-img"
+src="photos/sleepingbag1.jpg"              alt="Sleeping Bag">
+            <span class="gear-card-available">✓ 2 Units Available</span>
+          </div>
+          <div class="gear-card-body">
+            <h3 class="gear-card-name">Sleeping Bag (Winter)</h3>
+            <p class="gear-card-desc">Rated to -5°C, mummy-style fill with compression sack. Lightweight and warm — ideal for overnight camps in the Kullu–Manali–Leh corridor.</p>
+            <div class="gear-price-rows">
+              <div class="gear-price-row">
+                <span class="gear-price-label"><i class="fas fa-moon"></i> Rent per day</span>
+                <span class="gear-price-value price-green">₹250</span>
+              </div>
+              <div class="gear-price-row">
+                <span class="gear-price-label"><i class="fas fa-shield-alt"></i> Refundable security</span>
+                <span class="gear-price-value price-security">₹2,000</span>
+              </div>
+              <div class="gear-price-row">
+                <span class="gear-price-label"><i class="fas fa-boxes"></i> Inventory</span>
+                <span class="gear-price-value">2 bags</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /gear-grid -->
+
+      //2nd grid
+
+      <div class="gear-grid">
+
+        <!-- Tent -->
+        <div class="gear-card">
+          <div class="gear-card-img-wrap">
+            <img
+              class="gear-card-img"
+              src="https://images.unsplash.com/photo-1487730116645-74489c95b41b?w=700&auto=format&fit=crop"
+              alt="2-Person Camping Tent">
+            <span class="gear-card-available">✓ 2 Units Available</span>
+          </div>
+          <div class="gear-card-body">
+            <h3 class="gear-card-name">2-Person Camping Tent</h3>
+            <p class="gear-card-desc">Durable dome tent with waterproof fly, sturdy poles, and a ventilated inner — perfect for Himalayan conditions up to 3,000 m altitude.</p>
+            <div class="gear-price-rows">
+              <div class="gear-price-row">
+                <span class="gear-price-label"><i class="fas fa-moon"></i> Rent per day</span>
+                <span class="gear-price-value price-green">₹500</span>
+              </div>
+              <div class="gear-price-row">
+                <span class="gear-price-label"><i class="fas fa-shield-alt"></i> Refundable security</span>
+                <span class="gear-price-value price-security">₹3,500</span>
+              </div>
+              <div class="gear-price-row">
+                <span class="gear-price-label"><i class="fas fa-boxes"></i> Inventory</span>
+                <span class="gear-price-value">2 tents</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sleeping Bag -->
+        <div class="gear-card">
+          <div class="gear-card-img-wrap">
+            <img
+              class="gear-card-img"
+src="photos/sleepingbag1.jpg"              alt="Sleeping Bag">
+            <span class="gear-card-available">✓ 2 Units Available</span>
+          </div>
+          <div class="gear-card-body">
+            <h3 class="gear-card-name">Sleeping Bag (Winter)</h3>
+            <p class="gear-card-desc">Rated to -5°C, mummy-style fill with compression sack. Lightweight and warm — ideal for overnight camps in the Kullu–Manali–Leh corridor.</p>
+            <div class="gear-price-rows">
+              <div class="gear-price-row">
+                <span class="gear-price-label"><i class="fas fa-moon"></i> Rent per day</span>
+                <span class="gear-price-value price-green">₹250</span>
+              </div>
+              <div class="gear-price-row">
+                <span class="gear-price-label"><i class="fas fa-shield-alt"></i> Refundable security</span>
+                <span class="gear-price-value price-security">₹2,000</span>
+              </div>
+              <div class="gear-price-row">
+                <span class="gear-price-label"><i class="fas fa-boxes"></i> Inventory</span>
+                <span class="gear-price-value">2 bags</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /gear-grid -->
+
+      <hr class="camp-divider">
+
+      <!-- CONSUMABLES -->
+      <p class="camp-section-label">Consumables &amp; Equipment</p>
+      <h2 class="camp-section-title">Cooking Gear</h2>
+      <p class="camp-section-sub">Compact and powerful — ideal for high-altitude cooking.</p>
+
+      <div class="consumable-grid">
+
+        <!-- Burner -->
+        <div class="consumable-card">
+          <div class="consumable-icon">
+            <i class="fas fa-fire"></i>
+          </div>
+          <div class="consumable-name">Travel Burner</div>
+          <p class="consumable-desc">Lightweight stainless stove, piezo ignition, folds compact into your pack. Works with standard butane canisters.</p>
+          <div class="consumable-price">₹500</div>
+          <div class="consumable-unit">per unit (rental)</div>
+        </div>
+
+        <!-- Butane Can -->
+        <div class="consumable-card">
+          <div class="consumable-icon">
+            <i class="fas fa-wind"></i>
+          </div>
+          <div class="consumable-name">Butane Canister</div>
+          <p class="consumable-desc">250 g isobutane-propane mix canister. Compatible with the travel burner and most threaded camp stoves.</p>
+          <div class="consumable-price">₹300</div>
+          <div class="consumable-unit">per can</div>
+        </div>
+
+      </div><!-- /consumable-grid -->
+
+      <!-- Info Note -->
+      <div class="camp-note">
+        <i class="fas fa-circle-info camp-note-icon"></i>
+        <div class="camp-note-text">
+          <h4>Booking &amp; Policy</h4>
+          <ul>
+            <li>Advance booking required — we have limited stock (2 tents, 2 sleeping bags).</li>
+            <li>Security deposit is fully refunded upon return and gear inspection.</li>
+            <li>Pickup &amp; drop: Himalayan Vista, Sundernagar, H.P. 175131</li>
+            <li>WhatsApp / call for availability: <strong>+91-8894498398</strong></li>
+          </ul>
+        </div>
+      </div>
+
+    </div><!-- /camp-container -->
+  </main>
+
+  <!-- ── Footer (same as main site) ─────────────────────── -->
+  <footer class="contact-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Quick Contact</h3>
+          <form class="quick-contact-form">
+            <input type="text" placeholder="Your Name" class="form-control" required>
+            <input type="email" placeholder="Your Email" class="form-control" required>
+            <input type="tel" placeholder="Your Phone" class="form-control">
+            <textarea placeholder="Your Message" class="form-control" rows="3" required></textarea>
+            <button type="submit" class="btn btn--primary">Send</button>
+          </form>
+        </div>
+
+        <div class="footer-section">
+          <h3>Contact Information</h3>
+          <div class="contact-info-list">
+            <p><i class="fas fa-map-marker-alt"></i> Sundernagar, front of 4 lane, near Shiva Bhojanalaya, Himachal Pradesh – 175131</p>
+            <p><i class="fas fa-phone"></i> +91-8894498398</p>
+            <p><i class="fas fa-envelope"></i> gauravs49374@gmail.com</p>
+            <p><i class="fas fa-globe"></i> https://gauravs49374.github.io/</p>
+            <p><i class="fas fa-exclamation-triangle"></i> Emergency: +91-9418457296</p>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h3>Operating Hours</h3>
+          <div class="operating-hours">
+            <p><strong>Check-in:</strong> 2:00 PM – 10:00 PM</p>
+            <p><strong>Check-out:</strong> 8:00 AM – 12:00 PM</p>
+            <p><strong>Gear Rentals:</strong> 8:00 AM – 8:00 PM</p>
+            <p><strong>Reception:</strong> 24/7</p>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h3>Contact via Insta or WhatsApp for instant booking</h3>
+          <div class="social-links">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://instagram.com/gauravs49374" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/himalayan_vista" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://youtube.com/himalayan-vista" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://wa.me/918894498398" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 Himalayan Vista Guest House. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Nav toggle (hamburger)
+    const toggle = document.getElementById('nav-toggle');
+    const menu = document.getElementById('nav-menu');
+    if (toggle) {
+      toggle.addEventListener('click', () => {
+        toggle.classList.toggle('active');
+        menu.classList.toggle('active');
+      });
+    }
+  </script>
+
+</body>
+</html>
