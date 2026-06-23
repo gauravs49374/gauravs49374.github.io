@@ -49,31 +49,39 @@
          
 
 
-   <!-- Split Hero: Rooms + Bikes -->
-    <section class="hero hero-split" id="home-hero">
-      <!-- Left: Rooms / Pay at arrival -->
-      <a href="#rooms" class="hero-panel hero-panel--rooms" aria-label="Click to view rooms and pay at arrival">
+   <!-- Split Hero: Rooms + Bikes + Camping -->
+    <section class="hero hero-split hero-split--three" id="home-hero">
+      <!-- Left: Rooms -->
+      <a href="#rooms" class="hero-panel hero-panel--rooms" data-page="rooms" aria-label="Click to view rooms">
         <div class="hero-overlay"></div>
         <div class="hero-content hero-content--split">
           <span class="hero-kicker">Stay at Himalayan Vista</span>
-          <h1>Click to view rooms</h1>
-          <p>
-            Cozy lake-view rooms 
-          </p>
+          <h1>Cozy Rooms</h1>
+          <p>Lake-view rooms with modern amenities</p>
           <span class="hero-btn" data-page="rooms">Explore rooms</span>
         </div>
       </a>
 
-      <!-- Right: Bike rentals -->
-      <a href="#bike-rentals" class="hero-panel hero-panel--bikes" aria-label="Rent a bike for your Himalayan ride">
+      <!-- Centre: Bike Rentals – flashy gradient -->
+      <a href="#bike-rentals" class="hero-panel hero-panel--bikes hero-panel--bikes-flash" data-page="bike-rentals" aria-label="Rent a bike for your Himalayan ride">
+        <div class="hero-overlay hero-overlay--bikes"></div>
+        <div class="hero-badge-hot">🔥 Hot Deal</div>
+        <div class="hero-content hero-content--split hero-content--bikes">
+          <span class="hero-kicker hero-kicker--flash">Ride the Himalayas</span>
+          <h2 class="hero-bikes-heading">Rent a Bike</h2>
+          <p>Hourly &bull; Day &bull; Weekly rentals</p>
+          <span class="hero-btn hero-btn--bikes-flash" data-page="bike-rentals">View Bikes &#8594;</span>
+        </div>
+      </a>
+
+      <!-- Right: Camping & Gear -->
+      <a href="camping.html" target="_blank" class="hero-panel hero-panel--camping" aria-label="Rent camping gear for your Himalayan adventure">
         <div class="hero-overlay"></div>
         <div class="hero-content hero-content--split">
-          <span class="hero-kicker" data-page="bike-rentals">Ride the Himalayas</span>
-          <h2>Rent a bike</h2>
-          <p>
-            Hourly | Day rental 
-          </p>
-          <span class="hero-btn hero-btn--alt" data-page="bike-rentals">View bikes</span>
+          <span class="hero-kicker">Camp the Himalayas</span>
+          <h2>Camping Gear</h2>
+          <p>Tents &bull; Sleeping Bags &bull; Burners</p>
+          <span class="hero-btn hero-btn--camping">Rent Gear ⛺</span>
         </div>
       </a>
     </section>
@@ -116,34 +124,67 @@
                 </div>
             </section>
 
-            <!-- Bike Rental Teaser -->
-            <section class="bike-teaser">
-                <div class="container">
-                    <div class="teaser-content">
-                        <div class="teaser-text">
-                            <h2>Explore the Himalayas on Two Wheels</h2>
-                            <p>From Royal Enfield adventures to comfortable scooters for local sightseeing - we have the perfect ride for your mountain exploration.</p>
-                            <button class="btn btn--primary" data-page="bike-rentals">View All Bikes</button>
-                        </div>
+            <!-- Dual Teaser: Bikes + Camping Gear -->
+            <section class="dual-teaser">
+                <!-- Bike Rental Teaser -->
+                <div class="teaser-half teaser-half--bikes">
+                    <div class="teaser-half-inner">
+                        <div class="teaser-half-badge">🏍️ Bike Rentals</div>
+                        <h2>Explore on Two Wheels</h2>
+                        <p>From Royal Enfield adventures to comfortable scooters — we have the perfect ride for your mountain journey.</p>
+                        <button class="btn btn--teaser-bikes" data-page="bike-rentals">View All Bikes &rarr;</button>
                         <div class="teaser-bikes">
                             <div class="teaser-bike">
-                                <img src="photos/1.png" alt="Royal Enfield Himalayan">
-                                <span>Royal Enfield Hunter 350
-                                </span>
+                                <img src="photos/1.png" alt="Royal Enfield Hunter 350">
+                                <span>Hunter 350</span>
                             </div>
                             <div class="teaser-bike">
-                                <img src="photos/classic350.png" alt="Royal Enfield Classic">
-                                <span>Royal Enfield Classic 350</span>
+                                <img src="photos/classic350.png" alt="Royal Enfield Classic 350">
+                                <span>Classic 350</span>
                             </div>
                             <div class="teaser-bike">
                                 <img src="photos/activa.png" alt="Honda Activa">
-                                <span>Honda Activa 6G</span>
+                                <span>Activa 6G</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Camping Gear Teaser -->
+                <div class="teaser-half teaser-half--camping">
+                    <div class="teaser-half-inner">
+                        <div class="teaser-half-badge teaser-half-badge--camping">⛺ Camping Gear</div>
+                        <h2>Camp Under the Stars</h2>
+                        <p>Premium tents, sleeping bags, travel burners &amp; butane cans — everything you need for your Himalayan camping adventure.</p>
+                        <a href="camping.html" target="_blank" class="btn btn--teaser-camping">View Camping Gear &rarr;</a>
+                        <div class="teaser-gear-grid">
+                            <div class="teaser-gear-item">
+                                <i class="fas fa-campground"></i>
+                                <span>2-Person Tent</span>
+                                <strong>₹500/day</strong>
+                            </div>
+                            <div class="teaser-gear-item">
+                                <i class="fas fa-moon"></i>
+                                <span>Sleeping Bag</span>
+                                <strong>₹250/day</strong>
+                            </div>
+                            <div class="teaser-gear-item">
+                                <i class="fas fa-fire"></i>
+                                <span>Travel Burner</span>
+                                <strong>₹500</strong>
+                            </div>
+                            <div class="teaser-gear-item">
+                                <i class="fas fa-wind"></i>
+                                <span>Butane Can</span>
+                                <strong>₹300</strong>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+
         </div>
+
 
         <!-- Rooms Page -->
         <div class="page" id="rooms">
@@ -171,8 +212,8 @@
                                 <span><i class="fa-solid fa-temperature-arrow-up"></i>Heater @ 150/day</span>
                             </div>
                             <div class="room-price">
-  <span style="text-decoration: line-through; color: gray;">₹1200</span>
-  ₹1000/night @ 200 off
+  <span style="text-decoration: line-through; color: gray;">₹1800</span>
+  ₹1500/night @ 300 off
 </div>
                             <button class="btn btn--primary btn--full-width book-room-btn" data-room="Deluxe Mountain View" data-price="3500">Book Now</button>
                         </div>
@@ -193,8 +234,8 @@
                                 <span><i class="fa-solid fa-temperature-arrow-up"></i>Heater @ 150/day</span>
                             </div>
                                                        <div class="room-price">
-  <span style="text-decoration: line-through; color: gray;">₹1200</span>
-  ₹1000/night @ 200 off
+  <span style="text-decoration: line-through; color: gray;">₹1800</span>
+  ₹1500/night @ 300 off
 </div>
                             <button class="btn btn--primary btn--full-width book-room-btn" data-room="Standard Valley View" data-price="2500">Book Now</button>
                         </div>
@@ -215,8 +256,8 @@
                                 <span><i class="fa-solid fa-temperature-arrow-up"></i>Heater @ 150/day</span>
                             </div>
                                                         <div class="room-price">
-  <span style="text-decoration: line-through; color: gray;">₹2500</span>
-  ₹2200/night @ 300 off
+  <span style="text-decoration: line-through; color: gray;">₹3100</span>
+  ₹2800/night @ 300 off
 </div>
                             <button class="btn btn--primary btn--full-width book-room-btn" data-room="Budget Twin Bed" data-price="1800">Book Now</button>
                         </div>
@@ -240,9 +281,9 @@
                                 <label class="form-label">Room Type</label>
                                 <select class="form-control" id="room-type" required>
                                     <option value="">Select Room Type</option>
-                                    <option value="Deluxe Mountain View" data-price="950">AC Room </option>
-                                    <option value="Standard Valley View" data-price="900">Non AC</option>
-                                    <option value="Budget Twin Bed" data-price="2200">3 BHK for you travel buddies</option>
+                                    <option value="Deluxe Mountain View" data-price="1500">AC Room </option>
+                                    <option value="Standard Valley View" data-price="1400"> AC Room</option>
+                                    <option value="Budget Twin Bed" data-price="2800">3 BHK for you travel buddies</option>
                                 </select>
                             </div>
                             <div class="form-row">
