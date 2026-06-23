@@ -2279,7 +2279,7 @@ select.form-control {
 }
 
 .hero-panel:hover .hero-overlay {
-  background: linear-gradient(to top, rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.15));
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(15, 23, 42, 0.15));
 }
 
 .hero-content--split {
@@ -2336,6 +2336,307 @@ select.form-control {
 }
 
 /* Sections / Cards */
+
+/* ─── 3-Panel Hero ─────────────────────────────────────── */
+.hero-split--three {
+  grid-template-columns: 1fr 1.1fr 1fr; /* centre slightly wider */
+}
+
+/* ─── Camping panel bg ─────────────────────────────────── */
+.hero-panel--camping {
+  background-image:
+    linear-gradient(to top, rgba(10, 30, 20, 0.82), rgba(10, 30, 20, 0.25)),
+    url("https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=900&auto=format&fit=crop");
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-btn--camping {
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  color: #fff;
+  font-weight: 700;
+}
+
+.hero-panel--camping:hover .hero-btn--camping {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 10px 20px rgba(34, 197, 94, 0.4);
+}
+
+/* ─── Flashy Gradient Bike Panel ───────────────────────── */
+.hero-panel--bikes-flash {
+  background-image:
+    linear-gradient(135deg,
+      rgba(255, 102, 0, 0.88) 0%,
+      rgba(255, 0, 128, 0.78) 40%,
+      rgba(80, 0, 200, 0.70) 100%),
+    url("photos/1.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated shimmer strip */
+.hero-panel--bikes-flash::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.12) 50%,
+    transparent 70%
+  );
+  animation: shimmer-slide 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes shimmer-slide {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.hero-overlay--bikes {
+  background: linear-gradient(
+    to top,
+    rgba(255, 60, 0, 0.35) 0%,
+    rgba(180, 0, 120, 0.15) 60%,
+    transparent 100%
+  );
+}
+
+/* Hot Deal badge */
+.hero-badge-hot {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #ff6b00, #ff0080);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 6px 14px;
+  border-radius: 999px;
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 15px rgba(255, 107, 0, 0.5);
+  animation: badge-pulse 2s ease-in-out infinite;
+  z-index: 2;
+}
+
+@keyframes badge-pulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 4px 15px rgba(255, 107, 0, 0.5); }
+  50%       { transform: scale(1.06); box-shadow: 0 6px 22px rgba(255, 107, 0, 0.75); }
+}
+
+.hero-kicker--flash {
+  background: linear-gradient(90deg, #ffd700, #ff6b00, #ff0080);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  opacity: 1 !important;
+}
+
+.hero-bikes-heading {
+  font-size: 38px !important;
+  font-weight: 900 !important;
+  background: linear-gradient(90deg, #fff 30%, #ffd700 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+  letter-spacing: -0.02em;
+}
+
+.hero-btn--bikes-flash {
+  background: linear-gradient(135deg, #ff6b00 0%, #ff0080 60%, #9c00ff 100%);
+  color: #fff;
+  font-weight: 800;
+  font-size: 15px;
+  border-radius: 999px;
+  box-shadow: 0 6px 20px rgba(255, 107, 0, 0.55);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  letter-spacing: 0.03em;
+}
+
+.hero-panel--bikes-flash:hover .hero-btn--bikes-flash {
+  transform: translateY(-3px) scale(1.06);
+  box-shadow: 0 12px 30px rgba(255, 0, 128, 0.6);
+}
+
+/* ─── Dual Teaser Section ──────────────────────────────── */
+.dual-teaser {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.teaser-half {
+  padding: 60px 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+.teaser-half--bikes {
+  background: var(--color-bg-1);
+  border-right: 1px solid var(--color-border);
+}
+
+.teaser-half--camping {
+  background: linear-gradient(135deg,
+    rgba(20, 83, 45, 0.07) 0%,
+    rgba(34, 197, 94, 0.05) 100%);
+}
+
+.teaser-half-inner {
+  max-width: 480px;
+}
+
+.teaser-half-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #ff6b00, #ff0080);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.teaser-half-badge--camping {
+  background: linear-gradient(135deg, #16a34a, #22c55e);
+}
+
+.teaser-half h2 {
+  margin: 0 0 12px;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.teaser-half p {
+  color: var(--color-text-secondary);
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+/* Bike teaser half button */
+.btn--teaser-bikes {
+  background: linear-gradient(135deg, #ff6b00 0%, #ff0080 100%);
+  color: #fff;
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 14px rgba(255, 107, 0, 0.4);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-10) var(--space-24);
+  margin-bottom: 28px;
+  border: none;
+  cursor: pointer;
+  font-size: var(--font-size-base);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn--teaser-bikes:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(255, 0, 128, 0.5);
+}
+
+/* Camping teaser half button */
+.btn--teaser-camping {
+  background: linear-gradient(135deg, #16a34a 0%, #22c55e 100%);
+  color: #fff;
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 14px rgba(34, 197, 94, 0.35);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-10) var(--space-24);
+  margin-bottom: 28px;
+  border: none;
+  cursor: pointer;
+  font-size: var(--font-size-base);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn--teaser-camping:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(34, 197, 94, 0.55);
+}
+
+/* Camping gear 2x2 icon grid */
+.teaser-gear-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 4px;
+}
+
+.teaser-gear-item {
+  background: var(--color-surface);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-base);
+  padding: 16px 12px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.teaser-gear-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(34, 197, 94, 0.4);
+}
+
+.teaser-gear-item i {
+  font-size: 24px;
+  color: #16a34a;
+  display: block;
+  margin-bottom: 8px;
+  transition: transform 0.3s ease;
+}
+
+.teaser-gear-item:hover i {
+  transform: scale(1.15) rotate(5deg);
+}
+
+.teaser-gear-item span {
+  display: block;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin-bottom: 4px;
+}
+
+.teaser-gear-item strong {
+  font-size: var(--font-size-base);
+  color: #16a34a;
+  font-weight: 700;
+}
+
+/* Responsive: stack on mobile */
+@media (max-width: 768px) {
+  .hero-split--three {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-panel--bikes-flash {
+    min-height: 45vh;
+  }
+
+  .dual-teaser {
+    grid-template-columns: 1fr;
+  }
+
+  .teaser-half {
+    padding: 40px 24px;
+  }
+
+  .teaser-half--bikes {
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+}
+
 
 /* Promotion Advertisement Popup Styles */
 .modal--advt {
