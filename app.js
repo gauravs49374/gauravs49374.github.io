@@ -168,8 +168,10 @@ function setupEventListeners() {
     const navLinks = document.querySelectorAll('.nav-link');
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
-            e.preventDefault();
             const page = link.getAttribute('data-page');
+            // Allow external links (e.g. camping.html) to navigate normally
+            if (!page) return;
+            e.preventDefault();
             if (page === 'admin' && (!currentUser || currentUser.role !== 'admin')) {
                 alert('Admin access required');
                 return;
