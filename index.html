@@ -20,6 +20,7 @@
                 <a href="#rooms" class="nav-link" data-page="rooms">Rooms</a>
                 <a href="#book-now" class="nav-link" data-page="book-now">Book Now</a>
                 <a href="#bike-rentals" class="nav-link" data-page="bike-rentals">Bike Rentals</a>
+                <a href="#camping" class="nav-link nav-link--camping" data-page="camping">Camping Gear</a>
                 <a href="#about" class="nav-link" data-page="about">About</a>
                 <a href="#contact" class="nav-link" data-page="contact">Contact</a>
                 <a href="#admin" class="nav-link admin-link" data-page="admin" style="display: none;">Admin</a>
@@ -75,13 +76,13 @@
       </a>
 
       <!-- Right: Camping & Gear -->
-      <a href="camping.html" target="_blank" class="hero-panel hero-panel--camping" aria-label="Rent camping gear for your Himalayan adventure">
+      <a href="#camping" class="hero-panel hero-panel--camping" data-page="camping" aria-label="Rent camping gear for your Himalayan adventure">
         <div class="hero-overlay"></div>
         <div class="hero-content hero-content--split">
           <span class="hero-kicker">Camp the Himalayas</span>
           <h2>Camping Gear</h2>
           <p>Tents &bull; Sleeping Bags &bull; Burners</p>
-          <span class="hero-btn hero-btn--camping">Rent Gear ⛺</span>
+          <span class="hero-btn hero-btn--camping" data-page="camping">Rent Gear ⛺</span>
         </div>
       </a>
     </section>
@@ -156,7 +157,7 @@
                         <div class="teaser-half-badge teaser-half-badge--camping">⛺ Camping Gear</div>
                         <h2>Camp Under the Stars</h2>
                         <p>Premium tents, sleeping bags, travel burners &amp; butane cans — everything you need for your Himalayan camping adventure.</p>
-                        <a href="camping.html" target="_blank" class="btn btn--teaser-camping">View Camping Gear &rarr;</a>
+                        <button class="btn btn--teaser-camping" data-page="camping">View Camping Gear &rarr;</button>
                         <div class="teaser-gear-grid">
                             <div class="teaser-gear-item">
                                 <i class="fas fa-campground"></i>
@@ -604,6 +605,135 @@ Relax in clean, spacious rooms with modern amenities including hot water, TV, an
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Camping Gear Page -->
+        <div class="page" id="camping">
+            <div class="container">
+                <div class="page-header">
+                    <h1>⛺ Camping Gear Rentals</h1>
+                    <p>Premium tents, sleeping bags, travel burners & butane cans for your Himalayan adventure</p>
+                </div>
+
+                <div class="camping-section-label">Overnight Rentals</div>
+                <h2 class="camping-section-title">Tents & Sleeping Bags</h2>
+                <p class="camping-section-sub">Refundable security deposit required at pickup. Returned upon gear check-in.</p>
+
+                <div class="camping-gear-grid">
+                    <!-- Tent Card -->
+                    <div class="camping-gear-card">
+                        <div class="camping-gear-img-wrap">
+                            <img class="camping-gear-img" src="https://images.unsplash.com/photo-1487730116645-74489c95b41b?w=700&auto=format&fit=crop" alt="2-Person Camping Tent">
+                            <span class="camping-gear-available">✓ 2 Units Available</span>
+                        </div>
+                        <div class="camping-gear-body">
+                            <h3 class="camping-gear-name">2-Person Camping Tent</h3>
+                            <p class="camping-gear-desc">Durable dome tent with waterproof fly, sturdy poles, and a ventilated inner — perfect for Himalayan conditions up to 3,000 m altitude.</p>
+                            <div class="camping-price-rows">
+                                <div class="camping-price-row">
+                                    <span class="camping-price-label"><i class="fas fa-moon"></i> Rent per day</span>
+                                    <span class="camping-price-value camping-price-green">₹500</span>
+                                </div>
+                                <div class="camping-price-row">
+                                    <span class="camping-price-label"><i class="fas fa-shield-alt"></i> Refundable security</span>
+                                    <span class="camping-price-value camping-price-orange">₹3,500</span>
+                                </div>
+                                <div class="camping-price-row">
+                                    <span class="camping-price-label"><i class="fas fa-boxes"></i> Inventory</span>
+                                    <span class="camping-price-value">2 tents</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sleeping Bag Card -->
+                    <div class="camping-gear-card">
+                        <div class="camping-gear-img-wrap">
+                            <img class="camping-gear-img" src="photos/sleepingbag1.jpg" alt="Sleeping Bag">
+                            <span class="camping-gear-available">✓ 2 Units Available</span>
+                        </div>
+                        <div class="camping-gear-body">
+                            <h3 class="camping-gear-name">Sleeping Bag (Winter)</h3>
+                            <p class="camping-gear-desc">Rated to -5°C, mummy-style fill with compression sack. Lightweight and warm — ideal for overnight camps in the Kullu–Manali–Leh corridor.</p>
+                            <div class="camping-price-rows">
+                                <div class="camping-price-row">
+                                    <span class="camping-price-label"><i class="fas fa-moon"></i> Rent per day</span>
+                                    <span class="camping-price-value camping-price-green">₹250</span>
+                                </div>
+                                <div class="camping-price-row">
+                                    <span class="camping-price-label"><i class="fas fa-shield-alt"></i> Refundable security</span>
+                                    <span class="camping-price-value camping-price-orange">₹2,000</span>
+                                </div>
+                                <div class="camping-price-row">
+                                    <span class="camping-price-label"><i class="fas fa-boxes"></i> Inventory</span>
+                                    <span class="camping-price-value">2 bags</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="camping-divider">
+
+                <div class="camping-section-label">Equipment Rental</div>
+                <h2 class="camping-section-title">Cooking Gear</h2>
+                <p class="camping-section-sub">Compact and powerful — ideal for high-altitude cooking.</p>
+
+                <div class="camping-gear-grid">
+                    <!-- Travel Burner - Rental -->
+                    <div class="camping-gear-card">
+                        <div class="camping-gear-img-wrap">
+                            <img class="camping-gear-img" src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=700&auto=format&fit=crop" alt="Travel Burner">
+                            <span class="camping-gear-available">🔥 Available for Rent</span>
+                        </div>
+                        <div class="camping-gear-body">
+                            <h3 class="camping-gear-name">Travel Burner</h3>
+                            <p class="camping-gear-desc">Lightweight stainless stove with piezo ignition. Folds compact into your pack. Works with standard butane canisters.</p>
+                            <div class="camping-price-rows">
+                                <div class="camping-price-row">
+                                    <span class="camping-price-label"><i class="fas fa-moon"></i> Rent per day</span>
+                                    <span class="camping-price-value camping-price-green">₹100</span>
+                                </div>
+                                <div class="camping-price-row">
+                                    <span class="camping-price-label"><i class="fas fa-shield-alt"></i> Refundable security</span>
+                                    <span class="camping-price-value camping-price-orange">₹500</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="camping-divider">
+
+                <div class="camping-section-label">Consumables</div>
+                <h2 class="camping-section-title">Fuel Canisters</h2>
+                <p class="camping-section-sub">Buy outright — no security deposit needed.</p>
+
+                <div class="camping-consumable-grid">
+                    <!-- Butane Can -->
+                    <div class="camping-consumable-card">
+                        <div class="camping-consumable-icon"><i class="fas fa-wind"></i></div>
+                        <div class="camping-consumable-name">Butane Canister (500g)</div>
+                        <p class="camping-consumable-desc">500g isobutane-propane mix canister. Compatible with the travel burner and most threaded camp stoves.</p>
+                        <div class="camping-consumable-price">₹300</div>
+                        <div class="camping-consumable-unit">per can</div>
+                    </div>
+                </div>
+
+                <!-- Booking Note -->
+                <div class="camping-note">
+                    <i class="fas fa-circle-info camping-note-icon"></i>
+                    <div class="camping-note-text">
+                        <h4>Booking & Policy</h4>
+                        <ul>
+                            <li>Advance booking required — limited stock (2 tents, 2 sleeping bags, burner).</li>
+                            <li>Security deposit is fully refunded upon return and gear inspection.</li>
+                            <li>Pickup & drop: Himalayan Vista, Sundernagar, H.P. 175131</li>
+                            <li>WhatsApp / call for availability: <strong>+91-8894498398</strong></li>
+                        </ul>
                     </div>
                 </div>
             </div>
